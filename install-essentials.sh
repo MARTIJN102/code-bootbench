@@ -127,7 +127,7 @@ for choice in "${CHOICES[@]}"; do
       for category in "${!JS_STRUCTURE[@]}"; do
         for topic in ${JS_STRUCTURE[$category]}; do
           mkdir -p "javascript/$category/$topic"
-          touch "javascript/$category/$topic/index.js"
+          echo -e "$JS_RUN_COMMENT" > "javascript/$category/$topic/index.js"
           echo "${NOTE_TEMPLATE//\[Replace with topic name\]/$topic}" > "javascript/$category/$topic/index.md"
         done
       done
@@ -155,7 +155,7 @@ for choice in "${CHOICES[@]}"; do
       for category in "${!TS_STRUCTURE[@]}"; do
         for topic in ${TS_STRUCTURE[$category]}; do
           mkdir -p "typescript/$category/$topic"
-          touch "typescript/$category/$topic/index.ts"
+          echo -e "$TS_RUN_COMMENT" > "typescript/$category/$topic/index.ts"
           echo "${NOTE_TEMPLATE//\[Replace with topic name\]/$topic}" > "typescript/$category/$topic/index.md"
         done
       done
