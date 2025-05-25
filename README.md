@@ -25,9 +25,12 @@ It’s just a CLI installer that dumps everything you need to get your fundament
 
 ## 🚀 Install
 
+No need to clone anything. Just run one of these in your terminal:
+
+**Using curl**:
 ```bash
-chmod +x install-essentials.sh
-./install-essentials.sh
+bash <(curl -s https://raw.githubusercontent.com/MARTIJN102/code-bootbench/main/install-essentials.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/MARTIJN102/code-bootbench/main/install-essentials.sh)
 ```
 
 Pick what you want:
