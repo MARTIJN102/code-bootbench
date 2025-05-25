@@ -165,11 +165,15 @@ for choice in "${CHOICES[@]}"; do
       PROJECT_NAME="react-essentials-vite"
       mkdir -p "$PROJECT_NAME"
       cd "$PROJECT_NAME"
-      echo "$REACT_TUTORIAL_MD" > tutorial.md
 
-      npm create vite@latest . -- --template react-ts --force --yes
+      # Run Vite first before doing anything else
+      npm create vite@latest . -- --template react-ts
       npm install
       npm install react-router-dom
+
+      # Now write other stuff
+      echo "$REACT_TUTORIAL_MD" > tutorial.md
+
 
       PAGES=("jsx" "components" "props" "state" "use-effect" "conditional-rendering" "lists-and-keys")
       mkdir -p src/pages
