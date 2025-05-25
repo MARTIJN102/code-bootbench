@@ -167,7 +167,7 @@ for choice in "${CHOICES[@]}"; do
       cd "$PROJECT_NAME"
       echo "$REACT_TUTORIAL_MD" > tutorial.md
 
-      npm create vite@latest . -- --template react-ts --force
+      npm create vite@latest . -- --template react-ts --force --yes
       npm install
       npm install react-router-dom
 
