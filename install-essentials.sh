@@ -35,6 +35,9 @@ Use analogies or visuals if helpful.
   - [ ] Example problem or mini goal
 "
 
+JS_RUN_COMMENT="// ▶️ To run this file:\n// 1. Install Node.js: https://nodejs.org\n// 2. Run in terminal: node index.js\n"
+TS_RUN_COMMENT="// ▶️ To run this file:\n// 1. Install Node.js: https://nodejs.org\n// 2. Install ts-node: npm install -g ts-node typescript\n// 3. Run in terminal: npx ts-node index.ts\n"
+
 JS_TUTORIAL_MD="# JavaScript Essentials
 
 Master the core language that powers the web.
