@@ -94,100 +94,120 @@ read -p "Your choices: " -a CHOICES
 
 for choice in "${CHOICES[@]}"; do
   case $choice in
-    1)
-      echo -e "${YELLOW}Installing full JavaScript Essentials...${NC}"
-      mkdir -p javascript
-      echo "$JS_TUTORIAL_MD" > javascript/tutorial.md
+  1)
+    echo -e "${YELLOW}Installing full JavaScript Essentials...${NC}"
+    mkdir -p javascript
+    echo "$JS_TUTORIAL_MD" >javascript/tutorial.md
 
-      declare -A JS_STRUCTURE=(
-        [basics]="let-const-var typeof-coercion operators primitive-vs-reference"
-        [functions]="function-declarations-vs-expressions arrow-vs-normal default-parameters"
-        [scope-and-closure]="function-scope block-scope global-scope closures hoisting"
-        [this-and-binding]="arrow-this bind-call-apply context-switching"
-        [types-and-coercion]="typeof-instanceof-nan truthy-falsy"
-        [arrays]="create-access-update map filter reduce forEach find includes sort slice-splice flat"
-        [objects]="create-update-delete dot-vs-bracket-access destructuring spread-rest entries-values-keys"
-        [data-structures]="sets-weaksets maps-weakmaps array-of-objects"
-        [promises-and-async]="event-loop call-stack-queue promises chaining-then async-await async-error-handling"
-        [timers-and-intervals]="setTimeout-setInterval debounce-throttle"
-        [dom-manipulation]="querySelector-getElementById innerText-innerHTML-classList"
-        [event-handling]="add-remove-event-listener bubbling-delegation form-handling"
-        [browser-api-examples]="fetch-api localStorage-sessionStorage navigator-api clipboard-api"
-        [design-patterns]="module-pattern factory-functions singleton observer-pubsub"
-        [functional-programming]="currying-partial-application pure-functions immutability"
-        [modules-and-imports]="esm-modules"
-        [memory-and-performance]="memory-leaks performance-profiling"
-        [custom-utils]="debounce cloneDeep groupBy"
-        [refactoring-practice]="bad-loops-to-map-filter-reduce"
-        [regex]="test-match-replace"
-        [interview-practice]="common-questions"
-        [codewars-katas]="exercise-set-1"
-      )
+    declare -A JS_STRUCTURE=(
+      [basics]="let-const-var typeof-coercion operators primitive-vs-reference"
+      [functions]="function-declarations-vs-expressions arrow-vs-normal default-parameters"
+      [scope - and - closure]="function-scope block-scope global-scope closures hoisting"
+      [this - and - binding]="arrow-this bind-call-apply context-switching"
+      [types - and - coercion]="typeof-instanceof-nan truthy-falsy"
+      [arrays]="create-access-update map filter reduce forEach find includes sort slice-splice flat"
+      [objects]="create-update-delete dot-vs-bracket-access destructuring spread-rest entries-values-keys"
+      [data - structures]="sets-weaksets maps-weakmaps array-of-objects"
+      [promises - and - async]="event-loop call-stack-queue promises chaining-then async-await async-error-handling"
+      [timers - and - intervals]="setTimeout-setInterval debounce-throttle"
+      [dom - manipulation]="querySelector-getElementById innerText-innerHTML-classList"
+      [event - handling]="add-remove-event-listener bubbling-delegation form-handling"
+      [browser - api - examples]="fetch-api localStorage-sessionStorage navigator-api clipboard-api"
+      [design - patterns]="module-pattern factory-functions singleton observer-pubsub"
+      [functional - programming]="currying-partial-application pure-functions immutability"
+      [modules - and - imports]="esm-modules"
+      [memory - and - performance]="memory-leaks performance-profiling"
+      [custom - utils]="debounce cloneDeep groupBy"
+      [refactoring - practice]="bad-loops-to-map-filter-reduce"
+      [regex]="test-match-replace"
+      [interview - practice]="common-questions"
+      [codewars - katas]="exercise-set-1"
+    )
 
-      for category in "${!JS_STRUCTURE[@]}"; do
-        for topic in ${JS_STRUCTURE[$category]}; do
-          mkdir -p "javascript/$category/$topic"
-          echo -e "$JS_RUN_COMMENT" > "javascript/$category/$topic/index.js"
-          echo "${NOTE_TEMPLATE//\[Replace with topic name\]/$topic}" > "javascript/$category/$topic/index.md"
-        done
+    for category in "${!JS_STRUCTURE[@]}"; do
+      for topic in ${JS_STRUCTURE[$category]}; do
+        mkdir -p "javascript/$category/$topic"
+        echo -e "$JS_RUN_COMMENT" >"javascript/$category/$topic/index.js"
+        echo "${NOTE_TEMPLATE//\[Replace with topic name\]/$topic}" >"javascript/$category/$topic/index.md"
       done
-      ;;
-    2)
-      echo -e "${YELLOW}Installing full TypeScript Essentials...${NC}"
-      mkdir -p typescript
-      echo "$TS_TUTORIAL_MD" > typescript/tutorial.md
+    done
+    ;;
+  2)
+    echo -e "${YELLOW}Installing full TypeScript Essentials...${NC}"
+    mkdir -p typescript
+    echo "$TS_TUTORIAL_MD" >typescript/tutorial.md
 
-      declare -A TS_STRUCTURE=(
-        [basics]="typescript-vs-javascript setup-and-tsconfig basic-types functions-and-params type-inference"
-        [types-vs-interfaces]="basic-differences readonly-vs-optional merge-vs-extend"
-        [generics]="generic-functions generic-interfaces constraints default-types"
-        [utility-types]="partial-required-pick omit-record readonly-and-nonnullable"
-        [advanced-types]="intersection-union discriminated-unions type-guards conditional-types"
-        [enums]="numeric-vs-string const-vs-normal"
-        [dom-types]="event-types element-types"
-        [declaration-files]="when-to-use dts-file-structure"
-        [type-narrowing]="typeof-checks in-checks discriminated-checks"
-        [migrating-js-to-ts]="refactor-example common-traps"
-        [custom-types]="literal-types type-aliases"
-        [tsconfig-and-compiler]="strict-mode compiler-flags"
-      )
+    declare -A TS_STRUCTURE=(
+      [basics]="typescript-vs-javascript setup-and-tsconfig basic-types functions-and-params type-inference"
+      [types - vs - interfaces]="basic-differences readonly-vs-optional merge-vs-extend"
+      [generics]="generic-functions generic-interfaces constraints default-types"
+      [utility - types]="partial-required-pick omit-record readonly-and-nonnullable"
+      [advanced - types]="intersection-union discriminated-unions type-guards conditional-types"
+      [enums]="numeric-vs-string const-vs-normal"
+      [dom - types]="event-types element-types"
+      [declaration - files]="when-to-use dts-file-structure"
+      [type - narrowing]="typeof-checks in-checks discriminated-checks"
+      [migrating - js - to - ts]="refactor-example common-traps"
+      [custom - types]="literal-types type-aliases"
+      [tsconfig - and - compiler]="strict-mode compiler-flags"
+    )
 
-      for category in "${!TS_STRUCTURE[@]}"; do
-        for topic in ${TS_STRUCTURE[$category]}; do
-          mkdir -p "typescript/$category/$topic"
-          echo -e "$TS_RUN_COMMENT" > "typescript/$category/$topic/index.ts"
-          echo "${NOTE_TEMPLATE//\[Replace with topic name\]/$topic}" > "typescript/$category/$topic/index.md"
-        done
+    for category in "${!TS_STRUCTURE[@]}"; do
+      for topic in ${TS_STRUCTURE[$category]}; do
+        mkdir -p "typescript/$category/$topic"
+        echo -e "$TS_RUN_COMMENT" >"typescript/$category/$topic/index.ts"
+        echo "${NOTE_TEMPLATE//\[Replace with topic name\]/$topic}" >"typescript/$category/$topic/index.md"
       done
-      ;;
-    3)
-      echo -e "${YELLOW}Installing React Essentials Tutorial...${NC}"
-      PROJECT_NAME="react-essentials-vite"
-      mkdir -p "$PROJECT_NAME"
-      cd "$PROJECT_NAME"
+    done
+    ;;
+  3)
+    echo -e "${YELLOW}Installing React Essentials Tutorial...${NC}"
+    PROJECT_NAME="react-essentials-vite"
+    mkdir -p "$PROJECT_NAME"
+    cd "$PROJECT_NAME"
 
-      # Run Vite first before doing anything else
-      npm create vite@latest . -- --template react-ts
-      npm install
-      npm install react-router-dom
+    # Run Vite first before doing anything else
+    npm create vite@latest . -- --template react-ts --force --yes
+    npm install
+    npm install react-router-dom
 
-      # Now write other stuff
-      echo "$REACT_TUTORIAL_MD" > tutorial.md
+    # Now write other stuff
+    echo "$REACT_TUTORIAL_MD" >tutorial.md
 
+    PAGES=(
+      "home"
+      "jsx"
+      "components"
+      "props"
+      "state"
+      "use-effect"
+      "events"
+      "conditional-rendering"
+      "lists-and-keys"
+      "forms"
+      "lifting-state"
+      "use-context"
+      "use-ref"
+      "use-memo"
+      "custom-hooks"
+      "routing"
+      "not-found"
+    )
 
-      PAGES=("jsx" "components" "props" "state" "use-effect" "conditional-rendering" "lists-and-keys")
-      mkdir -p src/pages
+    mkdir -p src/pages
 
-      kebab_to_pascal() {
-        IFS='-' read -ra parts <<< "$1"
-        for part in "${parts[@]}"; do
-          printf "%s" "$(tr '[:lower:]' '[:upper:]' <<< "${part:0:1}")${part:1}"
-        done
-      }
+    kebab_to_pascal() {
+      IFS='-' read -ra parts <<<"$1"
+      for part in "${parts[@]}"; do
+        printf "%s" "$(tr '[:lower:]' '[:upper:]' <<<"${part:0:1}")${part:1}"
+      done
+    }
 
-      for page in "${PAGES[@]}"; do
-        component_name="$(kebab_to_pascal "$page")"
-        cat <<EOL > "src/pages/${component_name}.tsx"
+    for page in "${PAGES[@]}"; do
+      component_name="$(kebab_to_pascal "$page")"
+      mkdir -p "src/pages/$page"
+
+      cat <<EOL >"src/pages/$page/index.tsx"
 import React from 'react';
 
 const ${component_name} = () => {
@@ -201,9 +221,11 @@ const ${component_name} = () => {
 
 export default ${component_name};
 EOL
-      done
 
-      cat <<EOL > src/pages/NotFound.tsx
+      echo "${NOTE_TEMPLATE//\[Replace with topic name\]/$page}" >"src/pages/$page/index.md"
+    done
+
+    cat <<EOL >src/pages/NotFound.tsx
 import React from 'react';
 
 export default function NotFound() {
@@ -211,11 +233,14 @@ export default function NotFound() {
 }
 EOL
 
-      cat <<EOL > src/App.tsx
+    cat <<EOL >src/App.tsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import NotFound from './pages/NotFound';
-$(for page in "${PAGES[@]}"; do component_name="$(kebab_to_pascal "$page")"; echo "import ${component_name} from './pages/${component_name}';"; done)
+
+$(for page in "${PAGES[@]}"; do
+      component_name="$(kebab_to_pascal "$page")"
+      echo "import ${component_name} from './pages/${page}';"
+    done)
 
 function App() {
   return (
@@ -224,11 +249,24 @@ function App() {
         <h1>React Essentials Tutorial</h1>
         <nav>
           <ul>
-$(for page in "${PAGES[@]}"; do echo "            <li><Link to='/${page}'>${page}</Link></li>"; done)
+$(for page in "${PAGES[@]}"; do
+      if [[ "$page" == "home" ]]; then
+        echo "            <li><Link to='/'>Home</Link></li>"
+      elif [[ "$page" != "not-found" ]]; then
+        echo "            <li><Link to='/${page}'>${page}</Link></li>"
+      fi
+    done)
           </ul>
         </nav>
         <Routes>
-$(for page in "${PAGES[@]}"; do component_name="$(kebab_to_pascal "$page")"; echo "          <Route path='/${page}' element={<${component_name} />} />"; done)
+$(for page in "${PAGES[@]}"; do
+      component_name="$(kebab_to_pascal "$page")"
+      if [[ "$page" == "home" ]]; then
+        echo "          <Route path='/' element={<${component_name} />} />"
+      elif [[ "$page" != "not-found" ]]; then
+        echo "          <Route path='/${page}' element={<${component_name} />} />"
+      fi
+    done)
           <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
@@ -239,7 +277,7 @@ $(for page in "${PAGES[@]}"; do component_name="$(kebab_to_pascal "$page")"; ech
 export default App;
 EOL
 
-      cat <<EOL > src/main.tsx
+    cat <<EOL >src/main.tsx
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
@@ -251,15 +289,15 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   </React.StrictMode>,
 )
 EOL
-      cd ..
-      ;;
-    4)
-      echo -e "${YELLOW}Exited by user.${NC}"
-      exit 0
-      ;;
-    *)
-      echo -e "${RED}Invalid selection: $choice${NC}"
-      ;;
+    cd ..
+    ;;
+  4)
+    echo -e "${YELLOW}Exited by user.${NC}"
+    exit 0
+    ;;
+  *)
+    echo -e "${RED}Invalid selection: $choice${NC}"
+    ;;
   esac
 done
 
