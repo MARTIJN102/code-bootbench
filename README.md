@@ -1,5 +1,10 @@
 # 🧰 Code Bootbench
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/MARTIJN102/code-bootbench?style=social)](https://github.com/MARTIJN102/code-bootbench/stargazers)
+[![Issues](https://img.shields.io/github/issues/MARTIJN102/code-bootbench)](https://github.com/MARTIJN102/code-bootbench/issues)
+[![Last Commit](https://img.shields.io/github/last-commit/MARTIJN102/code-bootbench)](https://github.com/MARTIJN102/code-bootbench/commits/main)
+
 Made this because I was sick of having zero structure while trying to learn JavaScript, TypeScript, and React.  
 It’s just a CLI installer that dumps everything you need to get your fundamentals straight — without bs.
 
